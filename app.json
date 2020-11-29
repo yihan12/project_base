@@ -1,7 +1,9 @@
 {
   "pages": [
-    "pages/index/index",
-    "pages/logs/logs"
+    "pages/Tabbr/index/index",
+    "pages/Tabbr/mine/mine",
+    "pages/Tabbr/shop/shop",
+    "pages/Tabbr/shopcar/shopcar"
   ],
   "window": {
     "backgroundTextStyle": "light",
