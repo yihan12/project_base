@@ -1,0 +1,75 @@
+<!-- pages/Tabbr/index/index.wxml -->
+<!-- index.wxml -->
+<view class="index_container">
+    <view class="index_top content_main">
+        <view class="index_top_l">
+            <van-image custom-class="name" src="/images/index.png" />
+            <view class="index_top_info">
+                <text>{{selfPoint.fullName?selfPoint.fullName:name}}</text>
+                <text class="info">{{selfPoint.name}}</text>
+            </view>
+        </view>
+        <view class="index_top_r flex_row_sa">
+            <view class="fensi">
+                <view class="t1">{{info&&info.buyIndex?info.buyIndex:0}}</view>
+                <view class="t2">
+                    <van-icon name="friends" color="#00c6c7" />
+                    购买指数
+                </view>
+            </view>
+            <view class="mai">
+                <view class="t1">{{info&&info.buyHot?info.buyHot:0}}</view>
+                <view class="t2">
+                    <van-icon name="fire" color="#ff5300" />
+                    购买热度
+                </view>
+            </view>
+        </view>
+    </view>
+    <view>
+        <van-notice-bar text="{{ text }}" backgroundColor="#fff" color="#00ecad" left-icon="volume" />
+    </view>
+    <view class="index_table content_main">
+        <van-search value="{{ value }}" bind:change="changeSearch" use-action-slot shape="round" placeholder="请输入搜索商品">
+            <view slot="action" bind:tap="onSearchList">搜索</view>
+        </van-search>
+        <van-grid style="font-size:50px" clickable class="table_nav" center border="{{false}}" gutter="{{ 0 }}" column-num="4">
+            <van-grid-item use-slot wx:for="{{ tables }}" wx:key="index" data-item="{{item}}" bind:click="goInShop">
+                <van-icon custom-class="icon" custom-style="border-radius:20px;overflow:hidden" size="50px" name="{{item.picUrl}}" />
+                <text class="name">{{item.categoryName}}</text>
+            </van-grid-item>
+        </van-grid>
+    </view>
+    <view class="banner">
+        <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" circular="{{circular}}" duration="{{duration}}">
+            <block wx:for="{{bannerList}}" wx:key="index">
+                <swiper-item>
+                    <image class="swiper_image" width="100" height="100" src="{{item.url}}" />
+                </swiper-item>
+            </block>
+        </swiper>
+    </view>
+    <view class="productList">
+        <van-card custom-class="product" wx:for="{{ productList }}" wx:key="index" wx:for-item="item" data-item="{{item}}" bind:tap="shopDetail" num="1" tag="热销" price="{{item.price&&item.price/100}}" origin-price="{{item.basePrice&&item.basePrice/100}}" desc="{{item.skuNameDesc}}" title="{{item.unit==null?item.productName:item.productName+item.unit}}" thumb="{{ item.mediaUrl }}" lazy-load="{{true}}">
+            <view slot="footer" data-item="{{item}}" catchtap="shopCart" style="display: flex;justify-content: space-between;align-items: center;">
+                <view style="color:#fc505c">提货时间：{{time}}</view>
+                <van-button custom-style="padding:8rpx 40rpx;height: 30px;" icon="shopping-cart-o" color="{{buttonColor}}" disabled="{{(!item.ats||item.ats==0)?true:false}}" size="normal" round>
+                    加入购物车
+                </van-button>
+            </view>
+            <view slot="tags">
+                <!-- <van-tag color="{{buttonColor}}" plain>热销</van-tag> -->
+            </view>
+            <view slot="bottom">
+                <view style="color:#000" class="slot_bottom">
+                    <van-icon custom-class="{{item.freeze>100?iconShow:icon}}" name="fire" color="#ff5300" />
+                    累计销量
+                    <text style="color: #db0a10;font-weight: 700;">{{item.freeze}}</text>
+                    库存剩余
+                    <text style="color: #fd8339;font-weight: 700;">{{item.ats}}</text>
+                </view>
+            </view>
+        </van-card>
+    </view>
+    <van-toast id="custom-selector" />
+</view>

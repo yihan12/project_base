@@ -1,0 +1,2 @@
+export const publicKey =
+  "MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBAN6uj93xw48P9snqi2K/wEPcWj/DDcnYV4uUupjFSeRNubeRc6SQ1NpWfVkXNteZnyjRw5eTZNv5VK3GNZ/c9AECAwEAAQ=="
