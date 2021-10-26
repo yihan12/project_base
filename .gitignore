@@ -1,5 +1,6 @@
 /.vscode/
 /exercise_vue3.0/dist/
 /exercise_vue3.0/node_modules/
+/exercise_vue3.0/package-lock.json
 
 /vant-pro/node_modules/
