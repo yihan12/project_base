@@ -1,3 +1,5 @@
 /.vscode/
-/exercise_vue3.0/
+/exercise_vue3.0/dist/
+/exercise_vue3.0/node_modules/
 
+/vant-pro/node_modules/
