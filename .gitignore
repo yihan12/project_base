@@ -2,5 +2,7 @@
 /exercise_vue3.0/dist/
 /exercise_vue3.0/node_modules/
 /exercise_vue3.0/package-lock.json
+/exercise_vue3.0/yarn.lock
+/exercise_vue3.0/yarn-error.log
 
 /vant-pro/node_modules/

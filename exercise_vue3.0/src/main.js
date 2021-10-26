@@ -2,7 +2,7 @@ import { createApp } from 'vue'
 import App from './App.vue'
 
 import 'amfe-flexible'
-
+import router from './router'
 // debug环境开启 VConsole
 const vue_vconsole = process.env.VUE_APP_CONSOLE
 if(vue_vconsole === 'show'){
@@ -11,4 +11,7 @@ if(vue_vconsole === 'show'){
     console.log(vConsole.version);
 }
 
-createApp(App).mount('#app')
+const app = createApp(App)
+app.use(router)
+
+app.mount('#app')
