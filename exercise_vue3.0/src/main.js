@@ -1,6 +1,8 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 
+import 'amfe-flexible'
+
 // debug环境开启 VConsole
 const vue_vconsole = process.env.VUE_APP_CONSOLE
 if(vue_vconsole === 'show'){
