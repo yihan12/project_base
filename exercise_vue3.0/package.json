@@ -6,7 +6,7 @@
     "start": "npm run dev",
     "dev": "vue-cli-service serve --mode local",
     "build:dev": "vue-cli-service build --mode development",
-    "build:test": "vue-cli-service build --mode test",
+    "build:debug": "vue-cli-service build --mode debug",
     "build:pro": "vue-cli-service build --mode production",
     "lint": "vue-cli-service lint"
   },
