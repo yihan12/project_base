@@ -1,7 +1,7 @@
 console.log('NODE_ENV:',process.env.NODE_ENV);
 console.log('VUE_APP_URL:',process.env.VUE_APP_URL);
 
-// 生产环境，测试和正式
+// 生产环境，测试和正式 判断是否是生产环境
 const IS_PROD = ['production', 'prod'].includes(process.env.NODE_ENV)
 // 测试
 var HOST_URL = 'http://121.35.249.14:9003'
@@ -49,6 +49,8 @@ module.exports = {
   indexPath: './index.html',
   // 生产环境是否生成 sourceMap 文件
   productionSourceMap: false,
+  // 设置是否在开发环境下每次保存代码时都启用 eslint验证。
+  lintOnSave: !IS_PROD,
   // dev-server 服务代理配置
   devServer: {
     open: false, // 配置自启浏览器

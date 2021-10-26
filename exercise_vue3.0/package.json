@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "core-js": "^3.6.5",
+    "vconsole": "^3.9.3",
     "vue": "^3.0.0"
   },
   "devDependencies": {
