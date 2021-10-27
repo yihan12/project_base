@@ -3,6 +3,7 @@ import App from './App.vue'
 
 import 'amfe-flexible'
 import router from './router'
+import store from './store'
 // debug环境开启 VConsole
 const vue_vconsole = process.env.VUE_APP_CONSOLE
 if(vue_vconsole === 'show'){
@@ -13,5 +14,6 @@ if(vue_vconsole === 'show'){
 
 const app = createApp(App)
 app.use(router)
+app.use(store)
 
 app.mount('#app')
