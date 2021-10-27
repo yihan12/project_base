@@ -10,27 +10,27 @@
 import { computed } from 'vue'
 import { useStore } from 'vuex'
 export default {
-    name:'home',
-    setup(){
-        const store = useStore()
-        console.log(store,'store:----');
-        const loading = computed(() => {
-            return store.state.user.loading
-        })
-        
-        const artificial = () => {
-            store.commit('setLoading', !store.state.user.loading) //实时更新slotFlag
-        }
-        
+  name:'home',
+  setup(){
+    const store = useStore()
+    console.log(store,'store:----');
+    const loading = computed(() => {
+      return store.state.user.loading
+    })
 
-        return {
-            loading,
-            artificial
-        }
+    const artificial = () => {
+      store.commit('setLoading', !store.state.user.loading) //实时更新slotFlag
     }
+
+
+    return {
+      loading,
+      artificial
+    }
+  }
 }
 </script>
 
 <style scoped>
-    
+
 </style>
