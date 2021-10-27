@@ -1,14 +1,14 @@
 <template>
     <div class="home">
         <div class="name" @click='artificial'>123</div>
-        {{loading?111:222}}
+        {{loading? 111 : 222}}
         <router-link to="/about">about</router-link>
     </div>
 </template>
 
 <script>
 import { computed } from 'vue'
-import { useStore } from 'vuex';
+import { useStore } from 'vuex'
 export default {
     name:'home',
     setup(){
