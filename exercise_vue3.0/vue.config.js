@@ -4,8 +4,8 @@ console.log('VUE_APP_URL:',process.env.VUE_APP_URL);
 // 生产环境，测试和正式 判断是否是生产环境
 const IS_PROD = ['production', 'prod'].includes(process.env.NODE_ENV)
 // 测试
-var HOST_URL = 'http://121.35.249.14:9003'
-var HOST_URL_SEC = 'http://121.35.249.14:9011'
+var HOST_URL = 'http://1123.com'
+var HOST_URL_SEC = 'http://2234.com'
 
 // // 开发
 // var HOST_URL = 'http://121.35.249.12:9003'
@@ -40,7 +40,7 @@ prefixs.forEach(item => {
 })
 module.exports = {
   // 默认'/'，部署应用包时的基本 URL
-  publicPath: IS_PROD ? process.env.VUE_APP_PUBLIC_PATH : "./", 
+  publicPath: IS_PROD ? process.env.VUE_APP_PUBLIC_PATH : "./",
   // 生产环境构建文件的目录
   outputDir: 'dist',
   // 生成的静态资源 - 相对于 outputDir 的 静态资源(js、css、img、fonts)目录
@@ -57,7 +57,7 @@ module.exports = {
         plugins: [
           require("autoprefixer")({
             // 配置使用 autoprefixer
-            overrideBrowserslist: ["last 15 versions"] 
+            overrideBrowserslist: ["last 15 versions"]
           }),
           require("postcss-pxtorem")({
             rootValue: 75, // 换算的基数
