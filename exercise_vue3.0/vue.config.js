@@ -7,9 +7,6 @@ const IS_PROD = ['production', 'prod'].includes(process.env.NODE_ENV)
 var HOST_URL = 'http://1123.com'
 var HOST_URL_SEC = 'http://2234.com'
 
-// // 开发
-// var HOST_URL = 'http://121.35.249.12:9003'
-// var HOST_URL_SEC = 'http://121.35.249.12:9011'
 
 // 代理对象 - 依据api/config内配置同步地址
 const proxy = {}
