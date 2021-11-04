@@ -18,6 +18,7 @@ import { useI18n } from 'vue-i18n'
 export default {
   name:'home',
   setup(){
+    // 使用vue-i18n
     const {t,locale} = useI18n()
     const name = locale.value
     console.log(t,t('home.text_1'),locale.value,9999);

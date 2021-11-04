@@ -15,7 +15,6 @@ const router = createRouter({
 
 
 router.beforeEach((to,from,next)=>{
-  console.log(LangUtils,'LangUtils-------',to);
   LangUtils.toggle(to.params.lang)
   console.log(to,from,next());
 })
