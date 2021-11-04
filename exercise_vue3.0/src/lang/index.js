@@ -1,3 +1,4 @@
+// 需要用最新的i18n
 import {createI18n} from "vue-i18n"
 import zh_cn from './zh-cn'
 import zh_en from './zh-en'

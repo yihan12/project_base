@@ -5,7 +5,10 @@ import 'amfe-flexible'
 import router from './router'
 import store from './store'
 import 'vant/lib/index.css'
+import i18n from "./lang"
 import { Button } from 'vant';
+
+
 // debug环境开启 VConsole
 const vue_vconsole = process.env.VUE_APP_CONSOLE
 if(vue_vconsole === 'show'){
@@ -19,6 +22,7 @@ app.use(router)
 app.use(Button)
 
 app.use(store)
+app.use(i18n)
 
 
 app.mount('#app')
