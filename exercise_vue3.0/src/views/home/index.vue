@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import { computed } from 'vue'
+import { computed, onMounted } from 'vue'
 import { useStore } from 'vuex'
 import { useI18n } from 'vue-i18n'
 export default {
@@ -26,6 +26,10 @@ export default {
     console.log(store,'store:----');
     const loading = computed(() => {
       return store.state.user.loading
+    })
+
+    onMounted(() => {
+      document.title = t('home.text_1')
     })
 
     const artificial = () => {
