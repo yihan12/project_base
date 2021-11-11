@@ -6,7 +6,7 @@ import router from './router'
 import store from './store'
 import 'vant/lib/index.css'
 import i18n from "./lang"
-import { Button } from 'vant';
+import { Button, Loading } from 'vant';
 
 
 // debug环境开启 VConsole
@@ -20,6 +20,7 @@ if(vue_vconsole === 'show'){
 const app = createApp(App)
 app.use(router)
 app.use(Button)
+app.use(Loading)
 
 app.use(store)
 app.use(i18n)

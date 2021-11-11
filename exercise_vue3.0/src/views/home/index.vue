@@ -33,7 +33,7 @@ export default {
     })
 
     const artificial = () => {
-      store.commit('setLoading', !store.state.user.loading) //实时更新slotFlag
+      store.commit('updateLoading', true) //实时更新slotFlag
     }
 
 

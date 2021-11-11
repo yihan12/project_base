@@ -2,13 +2,13 @@
 // 主要存放初始化数据；
 // mapState辅助函数
 const state = {
-  loading: true
+  loading: false
 }
 
 // 可以认为是store的计算属性
 // mapGetters辅助函数
 const getters = {
-
+  loading: state => state.loading
 }
 
 // 同步数据，改变vuex store的状态
@@ -18,7 +18,7 @@ const getters = {
 // mapMutations辅助函数
 
 const mutations = {
-  setLoading:(state, commit) => {
+  updateLoading:(state, commit) => {
     state.loading = commit
   }
 }
