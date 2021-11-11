@@ -1,6 +1,8 @@
 console.log('NODE_ENV:',process.env.NODE_ENV);
 console.log('VUE_APP_URL:',process.env.VUE_APP_URL);
 
+const path = require("path");
+
 // 生产环境，测试和正式 判断是否是生产环境
 const IS_PROD = ['production', 'prod'].includes(process.env.NODE_ENV)
 // 测试
@@ -48,6 +50,12 @@ module.exports = {
   productionSourceMap: false,
   // 设置是否在开发环境下每次保存代码时都启用 eslint验证。
   lintOnSave: !IS_PROD,
+  pluginOptions: {
+    "style-resources-loader": {
+      preProcessor: "less",
+      patterns: [path.resolve(__dirname, "src/assets/css/global.less")]
+    }
+  },
   css: {
     loaderOptions: {
       postcss: {

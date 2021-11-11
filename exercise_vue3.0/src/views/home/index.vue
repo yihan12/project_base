@@ -47,6 +47,10 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="less" scoped>
+.home{
+  background: @back_bg;
+  color: @color_red;
+}
 
 </style>
