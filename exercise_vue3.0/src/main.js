@@ -7,7 +7,7 @@ import store from './store'
 import 'vant/lib/index.css'
 import i18n from "./lang"
 import { Button, Loading } from 'vant';
-
+import infiniteScroll from 'vue-infinite-scroll'
 
 // debug环境开启 VConsole
 const vue_vconsole = process.env.VUE_APP_CONSOLE
@@ -24,6 +24,7 @@ app.use(Loading)
 
 app.use(store)
 app.use(i18n)
+app.use(infiniteScroll)
 
 
 app.mount('#app')
