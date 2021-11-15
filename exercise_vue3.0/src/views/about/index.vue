@@ -1,22 +1,31 @@
 <template>
     <div class="about">
         <ul v-infinite-scroll="load" class="infinite-list" style="overflow: auto"  infinite-scroll-distance="10">
-          <li v-for="i in count" :key="i" class="infinite-list-item">{{ i }}</li>
+          <li v-for="i in data" :key="i" class="infinite-list-item">{{ i.name }}</li>
         </ul>
         <!-- <router-link to="/">{{t('home.text_1')}}</router-link> -->
     </div>
 </template>
 
 <script>
-import { useI18n } from 'vue-i18n'
 import { ref } from "vue"
+import { useI18n } from 'vue-i18n'
 export default {
   name:'about',
   setup(){
-    const busy = true
-    const count = ref([1,2,3,4,5,6,7,8,9,10,11,12])
+    let busy = true
+    const easyData = ref(0)
+    console.log(easyData,'easyData----');
+    const data =[]
     const load = () => {
-      console.log(count);
+      busy = true;
+      let count = 0
+      setTimeout(() => {
+        for (var i = 0, j = 10; i < j; i++) {
+          data.push({ name: count++ });
+        }
+        this.busy = false;
+      }, 1000);
     }
 
 
@@ -26,8 +35,8 @@ export default {
       t,
       name,
       load,
-      count,
-      busy
+      busy,
+      data
     }
   }
 }
