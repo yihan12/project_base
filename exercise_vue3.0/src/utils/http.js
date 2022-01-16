@@ -1,32 +1,47 @@
-import axios from "axios";
+/**
+ * 封装axios
+ */
 
-console.log(axios,'axios==');
-// 如果有国际化语言切换，接口有相应配置，还得传相应的语言进行切换
+ import axios from "axios"
 
-// 创建axios实例
-const instance = axios.create({
-  baseUrl:'/',
-  timeout:60000,
-  withCredentials:false,//表示跨域请求时是否需要使用凭证
-  headers: {
-    'Content-Type': 'application/json;charset=UTF-8' // json格式数据
+ // 实例化axios
+ const instance = axios.create({
+   baseURL: '/api', //'/'
+   responseType: 'json', // 数据格式
+   withCredentials: true, // 是否允许带cookie这些
+   headers: {
+     'Content-Type': 'application/json;charset=UTF-8' // 请求头通用格式json格式数据
+   }
+ })
+ 
+ // 拦截请求头的数据
+ instance.interceptors.request.use(
+  config => {
+    // 防止get请求获取数据304缓存，必须保证状态为200
+    if (config.method === 'get') {
+      if (config.params) {
+        config.params['_'] = +new Date()
+      } else {
+        config.params = { '_': +new Date() }
+      }
+    }
+    return config
+  },
+  error => {
+    return Promise.reject(error)
   }
-})
-
-// 拦截请求前数据
-instance.interceptors.request.use(config=>{
-  return config
-},error=>{
-  Promise.reject(error)
-})
-
-
-// 拦截返回的数据
-instance.interceptors.response.use(response=>{
-  return response
-},error=>{
-  return Promise.reject(error)
-})
-
-export default instance
-
+ )
+ 
+ // 拦截响应
+ instance.interceptors.response.use(
+   // 成功
+   response=>{
+     return response
+   },
+   //报错
+   error=>{
+     return Promise.reject(error)
+   }
+ )
+ 
+ export default instance
