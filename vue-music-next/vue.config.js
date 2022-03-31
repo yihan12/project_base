@@ -1,3 +1,4 @@
+const registerRouter = require('./backend/router')
 const {
   defineConfig
 } = require('@vue/cli-service')
@@ -12,6 +13,11 @@ module.exports = defineConfig({
           @import "@/assets/scss/mixin.scss";
         `
       }
+    }
+  },
+  devServer: {
+    onBeforeSetupMiddleware(app) {
+      registerRouter(app.app)
     }
   },
 })
