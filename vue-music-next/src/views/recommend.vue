@@ -1,32 +1,32 @@
 <template>
   <div class="recommend">
-    <!-- <scroll class="recommend-content"> -->
-    <div>
-      <div class="slider-wrapper">
-        <div class="slider-content">
-          <slider v-if="sliders.length" :sliders="sliders"></slider>
+    <scroll class="recommend-content">
+      <div>
+        <div class="slider-wrapper">
+          <div class="slider-content">
+            <slider v-if="sliders.length" :sliders="sliders"></slider>
+          </div>
+        </div>
+        <div class="recommend-list">
+          <h1 class="list-title">热门歌单推荐</h1>
+          <ul>
+            <li v-for="item in albums" class="item" :key="item.id">
+              <div class="icon">
+                <img width="60" height="60" :src="item.pic">
+              </div>
+              <div class="text">
+                <h2 class="name">
+                  {{ item.username }}
+                </h2>
+                <p class="title">
+                  {{item.title}}
+                </p>
+              </div>
+            </li>
+          </ul>
         </div>
       </div>
-      <div class="recommend-list">
-        <h1 class="list-title">热门歌单推荐</h1>
-        <ul>
-          <li v-for="item in albums" class="item" :key="item.id">
-            <div class="icon">
-              <img width="60" height="60" src="item.pic">
-            </div>
-            <div class="text">
-              <h2 class="name">
-                {{ item.username }}
-              </h2>
-              <p class="title">
-                {{item.title}}
-              </p>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </div>
-    <!-- </scroll> -->
+    </scroll>
     <!-- <router-view v-slot="{ Component }">
       <transition appear name="slide">
         <component :is="Component" :data="selectedAlbum" />
@@ -39,15 +39,15 @@
 import { getRecommend } from '@/service/recommend'
 import Slider from '@/components/base/slider/slider'
 import { onMounted, reactive, toRefs } from '@vue/runtime-core'
-// import Scroll from '@/components/wrap-scroll'
+import Scroll from '@/components/base/scroll/scroll.vue'
 // import storage from 'good-storage'
 // import { ALBUM_KEY } from '@/assets/js/constant'
 
 export default {
   name: 'recommend',
   components: {
-    Slider
-    // Scroll
+    Slider,
+    Scroll
   },
   // data() {
   //   return {
