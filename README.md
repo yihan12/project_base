@@ -12,5 +12,5 @@ vue-cli3搭建项目
 
 ### vue2.6版本
 
-### vite + vue2.6
+### vite + vue2.6 + vuex
 
