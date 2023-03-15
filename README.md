@@ -1,16 +1,29 @@
-# vue2.0，vue3.0，react，小程序等项目搭建
+# project_base
 
-### vue3.0项目搭建，vue-cli4
+### 介绍
 
-#### 一、首先安装node、yarn、npm等，并搭建好环境
+记录个人学习，以及平时实战遇到的项目基础搭建；对自己学习和平时工作的总结。
 
-用vue脚手架vue-cli4搭建项目
+- vue-cli 脚手架、vite、webpack 等打包工具相关配置。
+- 基础 api、路由、公共方法等的封装。
+- vue2.6、vue2.7、vue3 配合 vite 快速构建项目，大幅提升老项目的编译，打包数据。
+- 性能优化等配置。
+- vue2、vue3 等源码学习。
 
-### vue2.0项目搭建，vue-cli3
+持续更新中。。。
 
-vue-cli3搭建项目
+### 项目目录
 
-### vue2.6版本
+> 需要注意 vite 的版本，以及对应支持的 node 版本，谨防因为 node 版本导致编译报错
 
-### vite + vue2.6 + vuex
+-[ x ] [vue-cli + vue2.6]() -[ x ] [vite + vue2.6]() -[ x ] [vite + vue2.7]() -[ x ] [vite + vue3]()
 
+### 源码学习记录
+
+#### vue2.6
+
+-[ x ] [new Vue 发生了什么？]() -[ x ] [$mount 如何实现？]()
+
+#### vue2.7
+
+#### vue3
