@@ -17,16 +17,17 @@
 > 需要注意 vite 的版本，以及对应支持的 node 版本，谨防因为 node 版本导致编译报错
 
 
--[ x ] [vue-cli + vue2.6]() 
--[ x ] [vite + vue2.6]()
--[ x ] [vite + vue2.7]() 
--[ x ] [vite + vue3]()
+- [x] [vue-cli + vue2.6]()   
+- [x] [vite + vue2.6]()  
+- [x] [vite + vue2.7]()   
+- [x] [vite + vue3]()  
 
 ### 源码学习记录
 
 #### vue2.6
 
--[ x ] [new Vue 发生了什么？]() -[ x ] [$mount 如何实现？]()
+- [x] [new Vue 发生了什么？]()   
+- [x] [$mount 如何实现？]()  
 
 #### vue2.7
 
