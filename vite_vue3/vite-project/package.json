@@ -15,7 +15,7 @@
     "@vitejs/plugin-vue": "^2.2.0",
     "unplugin-auto-import": "^0.6.6",
     "unplugin-vue-components": "^0.18.4",
-    "vite": "^2.8.0",
+    "vite": "^2.9.13",
     "vite-plugin-babel-import": "^2.0.5",
     "vite-plugin-style-import": "^2.0.0"
   }
